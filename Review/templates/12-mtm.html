@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>多对多正向查询数据</h1>
+    <h3>书名:{{ book.title }}</h3>
+    {% for au in authors %}
+        <h3>作者姓名：{{ au.name }}</h3>
+        <h3>作者年龄：{{ au.age }}</h3>
+    {% endfor %}
+    <h1>反向查询数据，用隐藏式属性book_set</h1>
+    <h3>作者姓名:{{ author.name }}</h3>
+    {% for book in books %}
+        <h3>书名:{{ book.title }}</h3>
+        <h3>出版日期:{{ book.publicate_data }}</h3>
+    {% endfor %}
+</body>
+</html>

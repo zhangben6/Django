@@ -1,0 +1,39 @@
+1.cookies 和 session
+    1.cookies实现
+		1.django 中使用 cookies
+			1.使用 响应对象 将数据保存到客户端
+				1.响应对象
+                    1.HttpResponse()
+                      resp = HttpResponse('响应一句话')
+                    2.render()
+                      resp = render(request,'xxx.html',locals())
+                    3.redirect()
+                      resp = redirect('/')
+                2.保存cookie
+                    相应对象.set_cookie(key,value,expires)
+                      key:cookie的名字
+                      value:cookie的值
+                      expires:默认是以 s 为单位的数字
+                        取值为0表示要删除该cookie值
+                3.获取cookie的值  路由 /08-getcookie
+                    request.COOKIES
+                    封装了当前站点下所有的cookies - 字典
+    2.session 实现 (在服务器上开辟空间,保存交互的信息)
+        1.保存session的值到服务器
+            request.session['KEY'] = VALUE
+        2.从服务器中获取session的值
+            VALUE = request.sessioin['KEY']
+        3.删除session的值
+            del request.session['KEY']
+        4.在 settings.py 中，有关session的设置
+			1.SESSION_COOKIE_AGE
+				作用：设置sessionID在cookies中的存活时间,默认两个星期
+				ex:
+					SESSION_COOKIE_AGE=60*30
+			2.SESSION_EXPIRY_AT_BROWSER_CLOSE
+				作用：设置浏览器关闭时则清除服务器上对应的session空间
+
+				ex:
+					SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+
+

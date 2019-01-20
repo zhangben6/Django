@@ -1,0 +1,13 @@
+已完成:
+1.模板的渲染,静态文件的配置
+2.路由的配置
+3.CSRF的解决方案: 删除 settings.py中MIDDLEWARE中CsrfViewMiddleware 中间件
+下一步:
+    1.ajax前端发送post数据,后台接受表单数据并且返回json数据
+    2.前端接收json数据,做下一步处理
+    3.配置数据库,创建实体类
+
+问题分析:
+    1.'register.html'中表单的form标签里面的action和method不设置属性,全靠script代码ajax技术
+    发送数据并相应
+    2. csrf 设置  允许接受post数据

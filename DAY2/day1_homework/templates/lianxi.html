@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% for l in list %}
+    <h3
+        {% if forloop.first %}
+            style="background-color: red"
+            {% elif forloop.last %}
+                        style="background-color: yellow"
+
+            {% else %}
+                        style="background-color: pink"
+
+            {% endif %}
+
+    >
+    姓名:{{ l }}
+    </h3>
+    {% endfor %}
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/03-form/" method="post">
+    {% csrf_token %}
+    {% comment %}
+    <!--循环遍历 form -->
+    {% for field in form %}
+        <p>
+        {{ field.label }}:{{ field }}
+        </p>
+    {% endfor %}
+    <p>
+        <input type="submit" value="提交">
+    </p>
+
+
+
+    <!--自动解析:as_p -->
+    {{ form.as_p }}
+    <p>
+        <input type="submit" value="提交">
+    </p>
+
+
+    <!-- 自动解析: as_ul -->
+    <ol>
+    {{ form.as_ul }}
+    </ol>
+    <p>
+        <input type="submit" value="提交">
+    </p>
+
+    {% endcomment %}
+
+
+    <table>
+    {{ form.as_table }}
+    </table>
+    <p>
+        <input type="submit" value="提交">
+    </p>
+
+</form>
+</body>
+</html>

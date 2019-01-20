@@ -1,0 +1,223 @@
+/* 页面基础样式 */
+body{
+    font:12px 'Microsoft yahei','黑体';
+    color:#9a9a9a;
+
+}
+
+/* 清除默认样式 */
+body,h1,h2,h3,h4,h5,h6,p,ul,ol{
+    margin:0;
+    padding: 0;
+    /* 清除列表默认样式 */
+    list-style:none;
+}
+
+a{
+    text-decoration: none;
+    color:#9a9a9a;
+}
+
+/* 鼠标悬停修改文本色 */
+a:hover{
+    color:blue;
+}
+
+/* 页面整体宽度和居中效果 */
+/* a标签右边边框做法 */
+/* 1.li加右边框 */
+/*   调整整个ul标签的上边距进行居中对齐 */
+
+#container{
+    width:992px;
+    margin:0 auto;
+    border:1px solid red;
+    height: 3000px;
+}
+
+/* 导航 */
+#nav{
+    background:#EEEEEE;
+    height:30px;
+    border:1px solid black;
+    line-height:30px;
+}
+
+#nav .rightNav{
+    float:right;
+    border:1px solid blue;
+}
+
+#nav .rightNav>li{
+    float:left;
+    /* border-right:1px solid grey; */
+    /* margin-right:10px; */
+     padding:0 5px; 
+     /* margin-top:6x;  */
+}
+
+#nav .rightNav>li>b{
+    margin-right:10px;
+    border-left:1px solid grey;
+}
+
+/* 左侧导航 */
+#nav .leftNav>li{
+    float:left;
+    /* li元素与导航栏的高度一样 */
+    border:1px solid red;
+    padding-left:10px;
+}
+
+#nav .leftNav>li>i{
+    /* 可以设置宽高,称为行内块元素 */
+    display: inline-block;
+    width:0;
+    height: 0;
+    border:8px solid transparent;
+    border-top:8px solid #999999;
+    position: relative;
+    top:8px;
+}
+
+/* 下拉菜单 */
+#nav .address{
+    position: relative
+}
+
+#nav .select{
+    position: absolute;
+    display:none;
+    z-index:1;
+    color:#000;
+    cursor:pointer;
+}
+
+#nav .address:hover .select{
+    display: block;
+    background:rgba(255,0,0,.5);
+
+}
+#nav .select>li:hover{
+    font-weight: bold;
+}
+
+
+
+/* 2.横幅 */
+#banner{
+    margin:15px 0;
+    height:207px;
+    position: relative;
+}
+
+#banner img{
+    width:100%;
+}
+
+/* 除第一张图片外,其他图片都隐藏 */
+#banner img:not(:first-child){
+    display: none;
+}
+
+
+#banner .imgNav{
+    position: absolute;
+    bottom:10px;
+    left:475px;
+}
+
+#banner li{
+    float:left;
+    color:orange;
+    width:15px;
+    height:15px;
+    border:1px solid blue;
+    border-radius: 50%;
+    background:white;
+    text-align: center;
+    line-height: 15px;
+    margin:0 5px;
+}
+
+/* 第一张图片默认显示,索引背景色为红色 */
+#banner li:first-child{
+    background: red;
+}
+
+/* 3.推荐 */
+#commend{
+    font-size:0;
+    height:112px;
+    border:1px solid orange;
+}
+
+#commend img{
+    width:240px;
+    margin-right:10px;
+
+    /* float:left; */
+}
+
+
+#commend .lastImg{
+    margin:0;
+}
+
+/* 4.主题部分 */
+#main{
+    margin-top:25px;
+    border:1px solid red;
+}
+
+#main .goodsTitle{
+    border-top:1px solid #ccc;
+    padding-top:15px;
+    padding-bottom:10px
+}
+
+#main .goodsTitle>a{
+    color:#333;
+    float:right;
+}
+
+#main ul{
+    /* 解决子元素浮动,父元素高度为0的问题 */
+    overflow: hidden;
+}
+
+/* 5.商品信息展示 */
+#main ul>li{
+    float: left;
+    width:188px;
+    margin-right:10px;
+    border:1px solid red;
+}
+
+#main ul>li>img{
+    width:100%;
+}
+
+/* 图片缩放效果 */
+#main ul>li>img:hover{
+    transform:scale(1.1);
+}
+#main ul>li>a{
+    float:right;
+    margin-top:5px;
+}
+
+#main ul p{
+    margin-left:5px;
+    margin-top:4px;
+    color:#555;
+    margin-bottom: 3px;
+}
+
+#main ul span{
+    margin-left:10px;
+}
+
+#main .no-margin{
+    margin:0;
+}

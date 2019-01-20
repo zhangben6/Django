@@ -1,0 +1,57 @@
+{% extends 'login.html' %}
+
+{% block style %}
+    <style>
+    #main-right{
+        margin-top:10px;
+    }
+    </style>
+
+{% endblock %}
+
+{% block title %}
+    注册会员
+{% endblock %}
+
+{% block anchor %}
+    <a href="/login">会员登录</a>
+{% endblock %}
+
+{% block form %}
+    <form action="/register/" method="post">
+        {% csrf_token %}
+        <!-- 1.手机号 -->
+        <div class="form-line">
+            <p>手机号</p>
+            <input type="text" name='uphone' class='uinput' placeholder="帅哥,您的手机号">
+            <div style="color: red">{{ errMsg }}</div>
+        </div>
+        <!-- 2.密码 -->
+        <div class="form-line">
+            <p>密码</p>
+            <input type="password" name='upwd' class='uinput' placeholder="输入密码">
+        </div>
+        <!-- 3.确认密码 -->
+        <div class="form-line">
+            <p>确认密码</p>
+            <input type="password" name='cpwd' class='uinput' placeholder="确认密码">
+        </div>
+        <!-- 4.用户名 -->
+        <div class="form-line">
+            <p>用户名</p>
+            <input type="text" name='uname' class='uinput' placeholder="请输入正确格式">
+        </div>
+        <!-- 5.邮箱 -->
+        <div class="form-line">
+            <p>邮箱</p>
+            <input type="email" name='uemail' class='uinput' placeholder="请使用QQ邮箱">
+        </div>
+        <!-- 6.注册&会员登录 -->
+        <div class="form-line">
+        <p></p>
+        <div>
+            <input type="submit" value="会员注册">
+        </div>
+    </div>
+    </form>
+{% endblock %}

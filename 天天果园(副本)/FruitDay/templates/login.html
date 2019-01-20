@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/login.css">
+    {% block style %}
+    {% endblock %}
+</head>
+<body>
+    <div id="container">
+        <h2>
+            {%  block title %}
+                会员登录
+            {% endblock %}
+        </h2>
+        <div id="main">
+
+            <div id="main-left">
+                <img src="/static/images/huiyuan.jpg">
+
+                {% block anchor %}
+                <a href="/register">
+                    会员注册
+                </a>
+                {% endblock %}
+        </div>
+
+            <div id="main-right">
+                {% block form %}
+                <form action="" method='get'>
+
+                    <div class="form-line">
+                        <p>手机号</p>
+                        <input type="text" name='phone' class='uinput' placeholder="帅哥,您的手机号">
+                    </div>
+
+                    <div class="form-line">
+                        <p>密码</p>
+                        <input type="password" name='userpwd' class='uinput' placeholder="请输入6到20位的密码">
+                    </div>
+
+                    <div class="form-line">
+                        <p></p>
+                        <div class='zhang'>
+                            <input type="checkbox" name='savepwd' class='isSave'>记住密码
+                                <a href="">忘记密码</a>
+                                <a href="">快捷登录</a>
+                        </div>
+                    </div>
+
+                    <div class="form-line">
+                        <p></p>
+                        <div>
+                            <input type="submit" value='注册'>
+                            <a href="/login">会员登录</a>
+                        </div>
+                    </div>
+                </form>
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table width="500" border="1">
+        <tr>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>邮箱</th>
+            <th>操作</th>
+        </tr>
+        {% for au in authors %}
+            {% if au.isActive %}
+
+            <tr>
+                <td>{{ au.name }}</td>
+                <td>{{ au.age }}</td>
+                <td>{{ au.email }}</td>
+                <td>
+                    <a href="/05-update/{{ au.id }}">修改</a>
+                    <button onclick="delAuthor({{ au.id }})">删除</button>
+                </td>
+            </tr>
+            {% endif %}
+        {% endfor %}
+    </table>
+        <button>增加作者信息</button>
+
+    <script>
+        function delAuthor(id){
+            location.href = '/09-delete/' + id
+        }
+    </script>
+</body>
+</html>

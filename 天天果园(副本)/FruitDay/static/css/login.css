@@ -1,0 +1,95 @@
+body,h2,p{
+    margin:0;
+    padding:0;
+}
+a{
+    text-decoration: none;
+    color:#64A131;
+}
+/* 外部容器的样式 */
+#container{
+    width:990px;
+    margin:150px auto;
+}
+
+/* 顶部标题的样式 */
+h2{
+    font-weight:normal;
+    color:#999;
+    border-bottom:1px solid #ccc;
+    padding-bottom:6px;
+    margin-bottom:30px;
+}
+/* 写主题样式 */
+#main{
+    /* 子元素浮动,解决父元素高度为0 */
+    overflow:hidden;
+}
+/* 左列 */
+#main-left{
+    float:left;
+    position: relative;
+}
+
+#main-left a{
+    position: absolute;
+    right:181px;
+    bottom:26px;
+    border:1px solid #64A131;
+    border-radius: 5px;
+    width:140px;
+    height:45px;
+    text-align: center;
+    line-height:45px;
+    font-size:20px;
+}
+
+#main-right{
+    float:right;
+    margin-top:70px;
+    margin-right:40px;
+}
+
+.form-line{
+    margin-bottom:30px;
+
+}
+
+.form-line p{
+    float:left;
+    width:64px;
+    height:40px;
+    text-align: right;
+    line-height:40px;
+    margin-right:40px;
+}
+
+.form-line .uinput{
+    box-sizing:border-box;
+    width:300px;
+    height:40px;
+    padding-left:10px;
+    border:1px solid #CCCCCC;
+    font-size:16px;
+    outline:none;
+}
+
+.form-line div p{
+    float:right;
+}
+.isSave{
+    width:18px;
+    height:18px;
+    vertical-align: middle;
+
+}
+
+.form-line div p a{
+    color:#999;
+    text-decoration: underline;
+    display: inline-block;
+    margin-left:20px;
+}
+.zhang{
+    /* border:1px solid red; */
+}

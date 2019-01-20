@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登陆页面</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/login.css">
+    {% block style %}
+    {% endblock %}
+</head>
+<body>
+    <div id="container">
+        <!--1.顶部标题-->
+
+        <h2>
+            {% block title %}
+            会员登陆
+            {% endblock %}
+        </h2>
+        <!--登陆信息-->
+        <div id="main">
+            <!--左列部分 -->
+            <div class="left">
+                < img src="/static/images/huiyuan.jpg">
+                {% block anchor %}
+                < a href=" ">会员注册</ a>
+                {% endblock %}
+
+            </div>
+            <!-- 右侧结构-->
+            <div class="right">
+                {% block form %}
+                <form action="">
+                    <!--第一行-->
+                    <div class="form-line">
+                        <p>手机号</p >
+                        <input class="uinput" type="text" name="uphone">
+                    </div>
+                    <!--第二行-->
+                    <div class="form-line">
+                        <p>密码</p >
+                        <input class="uinput" type="password" name="upwd" placeholder="请输入6-20位号码">
+                    </div>
+                    <!-- 第三行-->
+                    <div class="form-line">
+                        <p></p >
+                        <div>
+                            <input class="issave" type="checkbox" name="savepwd">记住密码
+                            <p>
+                                < a href="">忘记密码?</ a>
+                                < a href="">快捷登录</ a>
+                            </p >
+                        </div>
+                    </div>
+                    <!--第四行-->
+                    <div class="form-line">
+                        <p></p >
+                        <div>
+                            <input type="submit" value="登陆" class="loginBtn btn">
+                    {% endblock %}
