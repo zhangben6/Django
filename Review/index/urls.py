@@ -28,3 +28,16 @@ urlpatterns +=[
     url(r'^11-otm/$',views.otm_views),
     url(r'^12-mtm/$',views.mtm_views),
 ]
+
+
+# 自定义实体类的路由
+urlpatterns +=[
+    url(r'^13-objects/$',views.object_views),
+
+]
+
+# GET,POST提交方式路由
+urlpatterns +=[
+    url(r'^02-post/$',views.post_views),
+    url(r'^03-form/$',views.form_views),
+]

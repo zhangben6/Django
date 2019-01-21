@@ -14,6 +14,7 @@ def request_views(request): # request就是请求对象,它包含很多属性
     print(request.body)
     print(request.scheme)
     print(request.COOKIES)
+    print('==============')
     print(request.META)
     print(request.path)
     # 判断有没有请求的源地址

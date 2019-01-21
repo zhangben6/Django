@@ -8,6 +8,7 @@ LEVEL_CHOICE = (
     ('3','差评'),
 )
 
+
 class RemarkForm(forms.Form):
     # 表示评论内容的表单控件们
 
@@ -30,7 +31,7 @@ class RemarkForm(forms.Form):
 
     # 控件5 - 是否保存(isSaved) - Checkbox
     isSaved = forms.BooleanField(
-        label='是否保存'
+        label='是否保存',
     )
 
 

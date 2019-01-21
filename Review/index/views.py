@@ -2,6 +2,7 @@ from django.db.models import Sum, Avg, Count, F, Q
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from .models import *
+from .forms import *
 # Create your views here.
 
 def index(request):
@@ -220,3 +221,29 @@ def mtm_views(request):
     author = Author.objects.get(id=1)
     books = author.book_set.all()
     return render(request,'12-mtm.html',locals())
+
+
+def object_views(request):
+    count = Author.objects.age_count(90)
+    return HttpResponse('年龄大于90的人数为%d'%count)
+
+def post_views(request):
+    if request.method == 'GET':
+        return render(request,'13-post.html')
+    else:
+        uname = request.POST.get('uname')
+        upwd = request.POST.get('upwd')
+        return HttpResponse('用户名称:%s,密码:%s'%(uname,upwd))
+
+def form_views(request):
+    if request.method == 'GET':
+        form = RemarkForm()
+        return render(request,'14-form.html',locals())
+    else:
+        form = RemarkForm(request.POST)
+        if form.is_valid():
+            res = form.cleaned_data
+            print(res)
+            return HttpResponse('取值成功')
+        return HttpResponse('取值失败')
+

@@ -2,6 +2,16 @@ from django.db import models
 
 # Create your models here.
 
+
+# 创建自定义模型类,继承自models.Manager
+class AuthorManager(models.Manager):
+    # 自定义方法
+    def age_count(self,age):
+        return self.filter(age__gte=age).count()
+    def message(self,str):
+        return self.filter(name__contains=str)
+
+
 class Publisher(models.Model):
     name = models.CharField(max_length=30,verbose_name='名称')
     address = models.CharField(max_length=200,verbose_name='地址')
@@ -18,6 +28,7 @@ class Publisher(models.Model):
         ordering = ['id']
 
 class Author(models.Model):
+    objects = AuthorManager()
     name = models.CharField(max_length=30,verbose_name='姓名')
     age = models.IntegerField(verbose_name='年龄')
     email = models.EmailField(null=True,verbose_name='电子邮箱')
@@ -67,3 +78,6 @@ class Wife(models.Model):
         verbose_name = '夫人'
         verbose_name_plural = verbose_name
         ordering = ['id']
+
+
+
